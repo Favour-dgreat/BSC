@@ -112,7 +112,7 @@ export function HeroSection() {
           >
             <div className="relative w-full max-w-full md:max-w-[400px] aspect-square">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-3xl opacity-30"></div>
-              <div className="relative bg-card border border-border rounded-3xl p-6 shadow-xl overflow-hidden">
+              <div className="relative bg-card border border-border rounded-3xl p-6 shadow-xl ">
                 <div className="flex items-center gap-2 mb-6">
                   <Rocket size={20} className="text-blue-400" />
                   <h2 className="text-lg font-semibold">Business Benefits</h2>
