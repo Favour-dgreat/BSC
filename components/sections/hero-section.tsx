@@ -104,65 +104,66 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative hidden md:flex items-center justify-center lg:justify-end"
-          >
-            <div className="relative w-full max-w-full md:max-w-[400px] aspect-square">
+            className="relative md:flex items-center justify-center lg:justify-end"
+            style={{ height: "500px", overflowY: "auto" }}
+            >
+            <div className="relative w-full max-w-full md:max-w-[400px] aspect-square md:max-h-full md:overflow-visible">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-3xl opacity-30"></div>
-              <div className="relative bg-card border border-border rounded-3xl p-6 shadow-xl overflow-hidden">
-                <div className="flex items-center gap-2 mb-6">
-                  <Rocket size={20} className="text-blue-400" />
-                  <h2 className="text-lg font-semibold">Business Benefits</h2>
+              <div className="relative bg-card border border-border rounded-3xl p-6 shadow-xl ">
+              <div className="flex items-center gap-4 mb-4">
+                <Rocket size={20} className="text-blue-400" />
+                <h2 className="text-lg font-semibold">Business Benefits</h2>
+              </div>
+
+              <div className="space-y-4 ">
+                {features.map((feature, index) => (
+                <div
+                  key={index}
+                  onClick={() => setActiveFeature(index)}
+                  className={`p-4 rounded-lg transition-all duration-300 cursor-pointer ${
+                  index === activeFeature
+                    ? "bg-gradient-to-r from-blue-600/30 to-purple-600/30 border border-blue-500/20"
+                    : "hover:bg-[#1a1f2c]"
+                  }`}
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                  {feature.icon}
+                  <h3 className="font-bold">{feature.title}</h3>
+                  </div>
+
+                  <p className="text-sm text-gray-400 mb-3">
+                  {feature.description}
+                  </p>
+
+                  <div
+                  className={`overflow-hidden transition-all duration-500 ${
+                    index === activeFeature
+                    ? "max-h-20 opacity-100"
+                    : "max-h-0 opacity-0"
+                  }`}
+                  >
+                  <div className="bg-[#1a1f2c]/60 p-3 rounded mt-2 border border-gray-700/50">
+                    <p className="text-sm font-semibold text-blue-300">
+                    {feature.stat}
+                    </p>
+                  </div>
+                  </div>
                 </div>
+                ))}
+              </div>
 
-                <div className="space-y-6">
-                  {features.map((feature, index) => (
-                    <div
-                      key={index}
-                      onClick={() => setActiveFeature(index)}
-                      className={`p-4 rounded-lg transition-all duration-300 cursor-pointer ${
-                        index === activeFeature
-                          ? "bg-gradient-to-r from-blue-600/30 to-purple-600/30 border border-blue-500/20"
-                          : "hover:bg-[#1a1f2c]"
-                      }`}
-                    >
-                      <div className="flex items-center gap-3 mb-2">
-                        {feature.icon}
-                        <h3 className="font-bold">{feature.title}</h3>
-                      </div>
-
-                      <p className="text-sm text-gray-400 mb-3">
-                        {feature.description}
-                      </p>
-
-                      <div
-                        className={`overflow-hidden transition-all duration-500 ${
-                          index === activeFeature
-                            ? "max-h-20 opacity-100"
-                            : "max-h-0 opacity-0"
-                        }`}
-                      >
-                        <div className="bg-[#1a1f2c]/60 p-3 rounded mt-2 border border-gray-700/50">
-                          <p className="text-sm font-semibold text-blue-300">
-                            {feature.stat}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-4 pt-4 border-t border-gray-700">
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                    <Link href="#benefits"> Explore All Benefits</Link>
-                  </Button>
-                </div>
+              <div className="mt-4 pt-4 border-t border-gray-700">
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                <Link href="#benefits"> Explore All Benefits</Link>
+                </Button>
+              </div>
               </div>
             </div>
-          </motion.div>
+            </motion.div>
         </div>
       </div>
     </section>
