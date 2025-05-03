@@ -109,9 +109,9 @@ export function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="relative md:flex items-center justify-center lg:justify-end"
-            style={{ height: "500px", overflowY: "auto" }}
+            style={{ height: "600px", overflowY: "auto" }}
             >
-            <div className="relative w-full max-w-full md:max-w-[400px] aspect-square md:max-h-full md:overflow-visible">
+            <div className="relative w-full max-w-full md:max-w-[400px] aspect-square md:max-h-full md:overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-3xl opacity-30"></div>
               <div className="relative bg-card border border-border rounded-3xl p-6 shadow-xl ">
               <div className="flex items-center gap-4 mb-4">
